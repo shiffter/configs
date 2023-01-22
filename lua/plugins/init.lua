@@ -49,9 +49,16 @@ return require('packer').startup(function(use)
         require('nvim-web-devicons').setup({ default = true; })
       end
   }
+	
 
+	use  {
+		'mfussenegger/nvim-dap',
+		config = function()
+			require("plugins.dap")
+		end
+	}
 
-  use {
+	use {
   'nvim-tree/nvim-tree.lua',
   requires = {
     'nvim-tree/nvim-web-devicons', -- optional, for file icons
@@ -70,7 +77,6 @@ return require('packer').startup(function(use)
       require('Comment').setup()
     end
   }
-  
     -- автоматические закрывающиеся скобки
   use {
     'windwp/nvim-autopairs',
